@@ -1,13 +1,20 @@
 import Button from "../elements/Button";
 import { IoEyeOutline } from "react-icons/io5";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import { FaExclamationCircle } from "react-icons/fa";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import Loader from "../elements/Loader";
+// import { authContext } from "../../context/authContext";
+import { useDispatch, useSelector } from "react-redux";
+import { authAction } from "../../redux/slices/auth";
 
 const FormAuth = ({ type }) => {
   const navigate = useNavigate();
+  const location = useLocation();
+  // const { auth, setAuth } = useContext(authContext);
+  const auth = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,6 +25,21 @@ const FormAuth = ({ type }) => {
   const [errorMessage, setErrorMessage] = useState("");
   const [succesMessage, setSuccesMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    // IIFE => Immediately Invoked Function Expression
+    // console.log(location.state.from);
+    (() => {
+      if (auth.isLogin) {
+        if (location.state instanceof Object) {
+          return navigate(location.state.from);
+        }
+
+        navigate("/");
+      }
+    })();
+  }, [auth.isLogin]);
+
   const showPasswordHandler = () => {
     if (showPassword) return setShowPassword(false);
     setShowPassword(true);
@@ -75,8 +97,6 @@ const FormAuth = ({ type }) => {
       });
       setIsLoading(true);
       let users = JSON.parse(localStorage.getItem("users")) || [];
-      let userActive = JSON.parse(localStorage.getItem("userActive")) || [];
-
       if (type === "regist") {
         const userExists = users.some((existingUser) => existingUser.email === email);
         if (userExists) {
@@ -99,7 +119,7 @@ const FormAuth = ({ type }) => {
         setSuccesMessage("Sign Up Succes wait a few seconds");
         setTimeout(() => {
           setIsLoading(false);
-          navigate("/login");
+          navigate("/auth");
         }, 3000);
         return;
       }
@@ -117,8 +137,8 @@ const FormAuth = ({ type }) => {
           return;
         }
         if (user.password !== password) {
-          setIsLoading(false);
           setTimeout(() => {
+            setIsLoading(false);
             setErrorMessage("Incorrect Email / Password!");
             setError({
               email: true,
@@ -127,16 +147,21 @@ const FormAuth = ({ type }) => {
           }, 3000);
           return;
         }
-        if (userActive) {
-          localStorage.removeItem(userActive);
-        }
-        localStorage.setItem("userActive", JSON.stringify(user));
+        const submittedUser = {
+          user: {
+            email,
+            password,
+            fullName: "guest",
+          },
+          isLogin: true,
+        };
         setTimeout(() => {
           setSuccesMessage("Sign In Succes wait a few seconds");
           setIsLoading(false);
         }, 3000);
         setTimeout(() => {
-          navigate("/");
+          // setAuth(submittedUser);
+          dispatch(authAction.addAuth(submittedUser));
         }, 4000);
       }
     }

@@ -5,19 +5,54 @@ import PopularMovie from "../components/layouts/PopularMovie";
 import { FaArrowRightLong } from "react-icons/fa6";
 import UpcomingMovie from "../components/layouts/UpcomingMovie";
 import MoreInfo from "../components/layouts/MoreInfo";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { genresAction } from "../redux/slices/genres";
+import { getPopularMovie, getUpcomingMovie } from "../api/movie";
 
 const LandingPage = () => {
+  const dispatch = useDispatch();
+  const [isLoading, setIsLoading] = useState(false);
+  const [dataPopularMovie, setDataPopularMovie] = useState([]);
+  const [dataUpComing, setDataUpComing] = useState([]);
+  useEffect(() => {
+    const getAllFetch = async () => {
+      try {
+        setIsLoading(true);
+        const getGenres = dispatch(genresAction.getGenresThunk());
+        const [resultGenres, resultPopularMovie, resultUpComingMovie] = await Promise.all([
+          getGenres,
+          getPopularMovie(),
+          getUpcomingMovie(),
+        ]);
+        const dataPopular = await resultPopularMovie.json();
+        const dataUpComing = await resultUpComingMovie.json();
+        console.log({
+          genres: resultGenres.payload.genres,
+          popular: dataPopular,
+          upComing: dataUpComing,
+        });
+        setDataPopularMovie(dataPopular.results);
+        setDataUpComing(dataUpComing.results);
+      } catch (error) {
+        if (error instanceof Error) console.log(error.message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    getAllFetch();
+  }, [dispatch]);
   return (
     <section className="">
       <HeroSection />
       <FituresSection />
-      <PopularMovie />
+      <PopularMovie datas={dataPopularMovie} isLoading={isLoading} />
       <div className="w-full flex justify-center">
         <Link to={"/movie"} className="font-bold text-blue-600 items-center flex gap-4 text-2xl">
           View All <FaArrowRightLong className="text-xl" />
         </Link>
       </div>
-      <UpcomingMovie />
+      <UpcomingMovie datas={dataUpComing} isLoading={isLoading} />
       <MoreInfo />
     </section>
   );

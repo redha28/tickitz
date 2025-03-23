@@ -1,15 +1,14 @@
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
-const Paginasion = ({ page, setPage }) => {
+const Paginasion = ({ page, setPage, scrollTo, movieRef }) => {
   const handlePage = (action) => {
+    scrollTo(movieRef.current);
     if ((action === "prev") & (page !== 1)) {
       setPage(page - 1);
-      // setRefresh(!refresh);
       return;
     }
     if (action === "next") {
       setPage(page + 1);
-      // setRefresh(!refresh);
       return;
     }
   };

@@ -1,30 +1,30 @@
 import Card from "../elements/Card";
-import { useEffect, useState } from "react";
-import { getPopularMovie } from "../../api/movie";
+// import { useEffect, useState } from "react";
+// import { getPopularMovie } from "../../api/movie";
 import Skeleton from "../elements/Skeleton";
 
-const PopularMovie = () => {
-  const [datas, setDatas] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const getMovie = async () => {
-    try {
-      setIsLoading(true);
-      const res = await getPopularMovie();
-      if (!res.ok) {
-        throw new Error(`HTTP error! status: ${res.status}`);
-      }
-      const data = await res.json();
-      setDatas(data.results);
-    } catch (err) {
-      if (err instanceof Error) console.log(err.message);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+const PopularMovie = ({ datas, isLoading }) => {
+  // const [datas, setDatas] = useState([]);
+  // const [isLoading, setIsLoading] = useState(true);
+  // const getMovie = async () => {
+  //   try {
+  //     setIsLoading(true);
+  //     const res = await getPopularMovie();
+  //     if (!res.ok) {
+  //       throw new Error(`HTTP error! status: ${res.status}`);
+  //     }
+  //     const data = await res.json();
+  //     setDatas(data.results);
+  //   } catch (err) {
+  //     if (err instanceof Error) console.log(err.message);
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
 
-  useEffect(() => {
-    getMovie();
-  }, []);
+  // useEffect(() => {
+  //   getMovie();
+  // }, []);
 
   return (
     <section className="px-4 lg:px-24 py-12">

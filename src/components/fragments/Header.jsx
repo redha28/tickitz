@@ -1,15 +1,18 @@
 import { FaUser } from "react-icons/fa6";
 import Button from "../elements/Button";
 import Icon from "../elements/Icon";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import { useState } from "react";
 import { TbXboxX } from "react-icons/tb";
+import { useSelector } from "react-redux";
 
 const Header = () => {
-  let userActive = JSON.parse(localStorage.getItem("userActive")) || [];
-  const [humburger, setHumburger] = useState(false);
+  // let userActive = JSON.parse(localStorage.getItem("authContext")) || [];
+  const userActive = useSelector((state) => state.auth);
+  const [hamburger, setHamburger] = useState(false);
+  // console.log(userActive);
   return (
-    <header className="border-b-2 border-gray-300 fixed w-full z-20 bg-white top-0">
+    <header className="border-b-2 border-gray-300 sticky top-0 z-20 bg-white">
       <div className="px-4 md:px-24  py-4 flex justify-between">
         <div className="flex-1 items-center flex">
           <Icon />
@@ -21,8 +24,8 @@ const Header = () => {
               isPending
                 ? "pending"
                 : isActive
-                ? "text-blue-600 font-bold text-xl"
-                : "text-blue-300 font-bold text-xl"
+                ? "text-blue-600 font-bold text-xl px-4 py-2 "
+                : "text-blue-300 font-bold text-xl hover:bg-blue-600 px-4 py-2 rounded-md hover:text-white hover:font-bold"
             }>
             Home
           </NavLink>
@@ -32,8 +35,8 @@ const Header = () => {
               isPending
                 ? "pending"
                 : isActive
-                ? "text-blue-600 font-bold text-xl"
-                : "text-blue-300 font-bold text-xl"
+                ? "text-blue-600 font-bold text-xl px-4 py-2 "
+                : "text-blue-300 font-bold text-xl hover:bg-blue-600 px-4 py-2 rounded-md hover:text-white hover:font-bold"
             }>
             Movie
           </NavLink>
@@ -43,20 +46,20 @@ const Header = () => {
               isPending
                 ? "pending"
                 : isActive
-                ? "text-blue-600 font-bold text-xl"
-                : "text-blue-300 font-bold text-xl"
+                ? "text-blue-600 font-bold text-xl px-4 py-2 "
+                : "text-blue-300 font-bold text-xl hover:bg-blue-600 px-4 py-2 rounded-md hover:text-white hover:font-bold"
             }>
             Buy Ticket
           </NavLink>
         </div>
         <div className="flex-1 lg:flex hidden items-center justify-end gap-8">
-          {userActive.length !== 0 ? (
-            <div className="flex gap-4 items-center">
+          {userActive.isLogin ? (
+            <Link to={"/profile"} className="flex gap-4 items-center">
               <div className="border-2 rounded-full border-blue-600 shadow-2xl px-4 py-4">
                 <FaUser className="text-2xl" />
               </div>
               <p className="text-xl font-bold">Users</p>
-            </div>
+            </Link>
           ) : (
             <>
               <Button
@@ -72,68 +75,67 @@ const Header = () => {
             </>
           )}
         </div>
-        {/* Hamburger */}
         <div
           className={`${
-            humburger ? "right-0" : "-right-[100%]"
+            hamburger ? "right-0" : "-right-[100%]"
           } min-h-screen w-full bg-white fixed z-10 lg:hidden top-0 transition-all`}>
-          <div className="w-full h-full flex flex-col justify-center gap-8 items-center py-16 relative">
+          <div className="w-full h-full flex flex-col justify-center lg:gap-8 items-center py-16 relative">
             <div className="w-full flex justify-end px-12 ">
               <TbXboxX
                 className="font-bold text-4xl text-blue-600 cursor-pointer"
-                onClick={() => setHumburger(false)}
+                onClick={() => setHamburger(false)}
               />
             </div>
             <div className="flex-1 items-center flex  px-4 py-4 rounded-2xl">
               <Icon />
             </div>
-            <div className="flex-1 flex-col flex w-full justify-center items-center gap-16">
+            <div className="flex-1 flex-col flex w-full justify-center items-center gap-3 lg:gap-16">
               <NavLink
-                onClick={() => setHumburger(false)}
+                onClick={() => setHamburger(false)}
                 to={"/"}
                 className={({ isActive, isPending }) =>
                   isPending
                     ? "pending"
                     : isActive
-                    ? "text-blue-600 font-bold text-xl"
-                    : "text-blue-300 font-bold text-xl"
+                    ? "text-blue-600 font-bold text-xl px-4 py-2 "
+                    : "text-blue-300 font-bold text-xl hover:bg-blue-600 px-4 py-2 rounded-md hover:text-white hover:font-bold"
                 }>
                 Home
               </NavLink>
               <NavLink
-                onClick={() => setHumburger(false)}
+                onClick={() => setHamburger(false)}
                 to={"/movie"}
                 className={({ isActive, isPending }) =>
                   isPending
                     ? "pending"
                     : isActive
-                    ? "text-blue-600 font-bold text-xl"
-                    : "text-blue-300 font-bold text-xl"
+                    ? "text-blue-600 font-bold text-xl px-4 py-2 "
+                    : "text-blue-300 font-bold text-xl hover:bg-blue-600 px-4 py-2 rounded-md hover:text-white hover:font-bold"
                 }>
                 Movie
               </NavLink>
               <NavLink
-                onClick={() => setHumburger(false)}
+                onClick={() => setHamburger(false)}
                 to={"/order"}
                 className={({ isActive, isPending }) =>
                   isPending
                     ? "pending"
                     : isActive
-                    ? "text-blue-600 font-bold text-xl"
-                    : "text-blue-300 font-bold text-xl"
+                    ? "text-blue-600 font-bold text-xl px-4 py-2 "
+                    : "text-blue-300 font-bold text-xl hover:bg-blue-600 px-4 py-2 rounded-md hover:text-white hover:font-bold"
                 }>
                 Buy Ticket
               </NavLink>
             </div>
           </div>
           <div className="flex-1 flex justify-center  gap-8">
-            {userActive.length !== 0 ? (
-              <div className="flex flex-col gap-4 items-center">
-                <div className="rounded-full bg-white shadow-2xl px-4 py-4">
+            {userActive.isLogin ? (
+              <Link to={"/profile"} className="flex flex-row lg:flex-col gap-4 items-center">
+                <div className="rounded-full bg-white border-2 border-blue-600 shadow-2xl px-4 py-4">
                   <FaUser className="text-2xl" />
                 </div>
-                <p className="text-xl font-bold text-white">Users</p>
-              </div>
+                <p className="text-xl font-bold ">Users</p>
+              </Link>
             ) : (
               <>
                 <Button
@@ -152,7 +154,7 @@ const Header = () => {
         </div>
         <div
           className="flex-1 flex justify-end items-center md:hidden"
-          onClick={() => setHumburger(true)}>
+          onClick={() => setHamburger(true)}>
           <svg
             width="24"
             height="24"

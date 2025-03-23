@@ -1,32 +1,31 @@
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import Card from "../elements/Card";
-import { useEffect, useState } from "react";
-import { getUpcomingMovie } from "../../api/movie";
+// import { useEffect, useState } from "react";
+// import { getUpcomingMovie } from "../../api/movie";
 import Skeleton from "../elements/Skeleton";
 
-const UpcomingMovie = () => {
-  const [datas, setDatas] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const getMovie = async () => {
-    try {
-      setIsLoading(true);
-      const res = await getUpcomingMovie();
-      if (!res.ok) {
-        throw new Error(`HTTP error! status: ${res.status}`);
-      }
-      const data = await res.json();
-      setDatas(data.results);
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+const UpcomingMovie = ({ datas, isLoading }) => {
+  // const [datas, setDatas] = useState([]);
+  // const [isLoading, setIsLoading] = useState(true);
+  // const getMovie = async () => {
+  //   try {
+  //     setIsLoading(true);
+  //     const res = await getUpcomingMovie();
+  //     if (!res.ok) {
+  //       throw new Error(`HTTP error! status: ${res.status}`);
+  //     }
+  //     const data = await res.json();
+  //     setDatas(data.results);
+  //   } catch (err) {
+  //     console.log(err);
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
 
-  useEffect(() => {
-    setIsLoading(true);
-    getMovie();
-  }, []);
+  // useEffect(() => {
+  //   getMovie();
+  // }, []);
 
   return (
     <div className="px-4 lg:px-24 py-12">

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import bgAuth from "../assets/images/bg-auth.png";
 import MoreInfo from "../components/layouts/MoreInfo";
 import { FaSearch } from "react-icons/fa";
@@ -11,7 +11,14 @@ const AllMovie = () => {
   const [datas, setDatas] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
-
+  const movieRef = useRef();
+  const scrollTo = (ref) => {
+    window.scrollTo({
+      top: ref.offsetTop - 30,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
   useEffect(() => {
     const getMovie = async () => {
       try {
@@ -30,7 +37,7 @@ const AllMovie = () => {
     };
     getMovie();
   }, [page]);
-
+  // console.log(movieRef.current);
   return (
     <section>
       <div
@@ -52,7 +59,7 @@ const AllMovie = () => {
           </div>
         </div>
       </div>
-      <div className="px-4 lg:px-24 min-h-[600px]">
+      <div className="px-4 lg:px-24 min-h-[600px]" ref={movieRef}>
         <div className="w-full flex flex-col lg:flex-row">
           <div className="flex-1 flex flex-col gap-4  justify-center items-center py-8">
             <p className="font-bold text-2xl">Cari Event</p>
@@ -82,7 +89,7 @@ const AllMovie = () => {
             </div>
           </div>
         </div>
-        <div className="grid justify-center self-center lg:grid-cols-3 xl:grid-cols-4 lg:gap-6 gap-4 py-12">
+        <div className="grid justify-center self-center lg:grid-cols-3 xl:grid-cols-4 lg:gap-6 gap-8 py-12">
           {isLoading ? (
             <>
               <Skeleton size={"w-80 h-96"} />
@@ -114,7 +121,7 @@ const AllMovie = () => {
                   title={data.title}
                   dataGenre={data.genre_ids}
                   src={data.poster_path}
-                  size={"w-80 h-96"}
+                  size={"w-full h-96"}
                   id={data.id}
                   vote_average={data.vote_average}
                 />
@@ -125,8 +132,8 @@ const AllMovie = () => {
           )}
         </div>
       </div>
-      <div className="w-full min-h-32 flex justify-center items-center">
-        <Paginasion setPage={setPage} page={page} />
+      <div className="w-full  min-h-32 flex justify-center items-center">
+        <Paginasion setPage={setPage} page={page} scrollTo={scrollTo} movieRef={movieRef} />
       </div>
       <MoreInfo />
     </section>
