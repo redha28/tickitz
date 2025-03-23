@@ -10,7 +10,7 @@ import ovoLogo from "../assets/payment/Vector.png";
 import { useRef, useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import CardPayment from "../components/elements/cardPayment";
+import CardPayment from "../components/elements/CardPayment";
 import Loader from "../components/elements/Loader";
 import { historyAction } from "../redux/slices/history";
 import { orderAction } from "../redux/slices/orders";
