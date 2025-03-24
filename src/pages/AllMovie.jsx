@@ -6,8 +6,10 @@ import { getPopularMovie } from "../api/movie";
 import Card from "../components/elements/Card";
 import Paginasion from "../components/elements/Paginasion";
 import Skeleton from "../components/elements/Skeleton";
+import useTitle from "../hooks/useTitle";
 
 const AllMovie = () => {
+  useTitle("All Tickitz");
   const [datas, setDatas] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
@@ -37,7 +39,6 @@ const AllMovie = () => {
     };
     getMovie();
   }, [page]);
-  // console.log(movieRef.current);
   return (
     <section>
       <div

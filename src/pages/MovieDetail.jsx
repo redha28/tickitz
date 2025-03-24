@@ -8,9 +8,11 @@ import { FaRegClock } from "react-icons/fa";
 import { FaMapLocationDot } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
 import { orderAction } from "../redux/slices/orders";
+import useTitle from "../hooks/useTitle";
 // import { orderContext } from "../context/orderContext";
 
 const MovieDetail = () => {
+  useTitle("Tickitz Details");
   const params = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();

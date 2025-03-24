@@ -1,6 +1,8 @@
 import { Link } from "react-router";
 import bgNotFount from "../assets/images/bg-not-found.png";
+import useTitle from "../hooks/useTitle";
 const Error = () => {
+  useTitle("Not Found :(");
   return (
     <div className="min-h-screen flex flex-col gap-4 justify-center items-center">
       <div className=" flex flex-col items-center gap-8">

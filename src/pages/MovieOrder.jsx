@@ -8,7 +8,9 @@ import { useEffect, useState } from "react";
 import { FaExclamationCircle } from "react-icons/fa";
 import { orderAction } from "../redux/slices/orders";
 import { useNavigate } from "react-router";
+import useTitle from "../hooks/useTitle";
 const MovieOrder = () => {
+  useTitle("Tickitz Orders");
   const orders = useSelector((state) => state.orders);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -60,7 +62,7 @@ const MovieOrder = () => {
         <div className="flex-[5] flex flex-col gap-4 bg-white rounded-md shadow-2xl px-4 py-8">
           <div className="border-2 border-gray-300 flex flex-col lg:flex-row px-4 py-4 gap-4">
             <div
-              className="w-full lg:w-60 min-h-56 lg:h-36 flex-1 rounded-xl  bg-cover"
+              className="w-full lg:w-60 min-h-36 lg:max-h-36 flex-1 rounded-xl  bg-cover"
               style={{
                 backgroundImage: `url(${orders.image})`,
               }}></div>

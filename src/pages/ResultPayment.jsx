@@ -4,8 +4,10 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import { MdFileDownload } from "react-icons/md";
 import { useSelector } from "react-redux";
 import { Link, Navigate } from "react-router";
+import useTitle from "../hooks/useTitle";
 
 const ResultPayment = () => {
+  useTitle("Success Order");
   const history = useSelector((state) => state.history.datas);
   return (
     <div className="min-h-screen flex lg:flex-row flex-col">
@@ -13,7 +15,7 @@ const ResultPayment = () => {
         className="flex-[5] min-h-screen bg-cover bg-center relative"
         style={{
           backgroundImage:
-            "url(https://s3-alpha-sig.figma.com/img/0e4c/3c18/18a79468d72ed11ecff06ce23da1248d?Expires=1742774400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=qV3tQwOy9JZbU5-89JyBJaBjDdKCPYxfP1WxTY6gNwpj1Y-YCvVOWFGRzednP48io~~qPONpcTsWQFsuz9GF2rXoHpwkxWUaHYTPJtyv~r6uvmGRw2jdP9WvngU7D4wVXJ2j8lqJEorfVug1tnLD7rzXN32~o-hDa9BkHz~0R4lRjLcmtb9xS62vCtxW1OYZQLx3qbdWejVa28f1mmeATcpRw8WnShsGDCBQEJkAlUmUZ88mx-ukl7b5g6GQAZo9efXiNvX9mOq3a-Tk-EnAvNpApgDY4od7G6FV3LeuW6betvrJ7HDQCVQaVr5hI~WQgx3YU3XM7ya5vcHDXTYiPA__)",
+            "url(https://s3-alpha-sig.figma.com/img/0e4c/3c18/18a79468d72ed11ecff06ce23da1248d?Expires=1743984000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=MJzt~O~SJXevyBDqjV8g-vCykVP-Exye3qRB0A15edi-op0z3xcnmqqNDFlYmBk1f8BhyqIeOamCnzcoyCTIuqQJexR9CuZwoEVeBCbXkYVEDGsFCHq4TcpxZ2OSunu4akju9SKKSajbKUjlkAZng6HK9GmiBIIEj7KkU0L97w2R-bKhTEjzHEggAzBW1vujup2f5h09ZF7yClb9UC3kUmwPRxHy2-YBLr1xw-sf858QFTpJdEa8yrJ8zImv3iNJKwzxpJ3KsJwjzBPupnjVU3zAX7E5GKuWzfXycqnlw-BU1JilER6MNF-OsIqgKYlkgtB~AJ8Ye7YiLt2~On55Yg__)",
         }}>
         <div className="h-full w-full absolute top-0 right-0 bg-black/70 flex flex-col px-4 lg:px-24 gap-4 justify-center">
           <Icon />
@@ -39,7 +41,7 @@ const ResultPayment = () => {
                   className="w-60 h-60 bg-center bg-cover"
                   style={{
                     backgroundImage:
-                      "url(https://s3-alpha-sig.figma.com/img/09c9/4f8a/5c8639cbd11fc28260c6b0d752134f07?Expires=1742774400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=RKPaF3Nm33diyyUJbk92W4pmUIKje2rVgtqW~FLcr7uJH4sZFZYsOPEl~7jO1IZeMgyU7CBLjGhUxKzQxZvch4oBr0YXuUQlRUGq03m35~27gT7BVgCHK8t4jgWGb~l070lK8fYIpWg3hEJGKbPsp0zUXGX2omLksBrDNgJKjbYhGKM9UfJdXRP7P~2tQWhlPvFlDmf3MEdXUDjalo3btKuxQag35qOi8-VxK8xLpFqK7Go54UeQZOXbx1Gg6PCLq1HRY1~tio~GE1S5-t1AmXfOvjvlgwPmKDVe3UHpubJBjZWqeNRUHP-mPuwvDiWsKYYp1Yt6Vtuhnws1Y5nKDQ__)",
+                      "url(https://s3-alpha-sig.figma.com/img/09c9/4f8a/5c8639cbd11fc28260c6b0d752134f07?Expires=1743984000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=XOyIS0nOG5x3fYYmf5S9nd~qWfzVj8RxDYhgFXBeLmssackGalX6AU9vQ7U4Qn26KInRhmeu7YkDhBPCFAUVsvRwPj0kUiygpNb6laEmb4WjukasjLYZGPSCffcMDM1xg7H~hdfjfPolj1vsp84I-ZfJQ26mtq-OH4ivhm2gCL2rN7FZWiM9oJR7Kb35akMIKA07KpJKtSX-BXhhHn-Tcw9QHhxrRQxrBkREzM5-8r-TpRKdgIscYnM7~ohkk7aqkJkLfPhA3SxGcY2Q-mmJGFKQpsycsDBykmIMEthAqs-GucQfnyZ-tymUtshEtPlnAIAhHsXv1i1AWBcJTooMJg__)",
                   }}></div>
                 <div className="flex flex-col gap-4">
                   <div className="flex justify-between">

@@ -14,8 +14,10 @@ import CardPayment from "../components/elements/CardPayment";
 import Loader from "../components/elements/Loader";
 import { historyAction } from "../redux/slices/history";
 import { orderAction } from "../redux/slices/orders";
+import useTitle from "../hooks/useTitle";
 
 const Payment = () => {
+  useTitle("Tickitz Payment");
   const [isModal, setIsModal] = useState(false);
   const orders = useSelector((state) => state.orders);
   const [fullName, setFullName] = useState("");

@@ -9,8 +9,10 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { genresAction } from "../redux/slices/genres";
 import { getPopularMovie, getUpcomingMovie } from "../api/movie";
+import useTitle from "../hooks/useTitle";
 
 const LandingPage = () => {
+  useTitle("Welcome To Tickitz");
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
   const [dataPopularMovie, setDataPopularMovie] = useState([]);

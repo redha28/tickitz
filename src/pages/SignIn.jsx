@@ -3,8 +3,10 @@ import Icon from "../components/elements/Icon";
 import { FaFacebook } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import FormAuth from "../components/fragments/FormAuth";
+import useTitle from "../hooks/useTitle";
 
 const SignIn = () => {
+  useTitle("Sign In Account");
   return (
     <section>
       <div className="flex justify-center">
