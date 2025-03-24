@@ -74,7 +74,7 @@ const AccountSetting = () => {
           </div>
         </div>
       </div>
-      <div className="mb-8 flex justify-center">
+      <div className="mb-8 flex justify-center lg:justify-start">
         <button className="px-16 py-3 w-full lg:w-max bg-blue-600 font-bold text-white cursor-pointer rounded-xl">
           Update changes
         </button>
