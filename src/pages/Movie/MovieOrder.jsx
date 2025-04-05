@@ -1,14 +1,14 @@
 import { MdDone } from "react-icons/md";
-import Button from "../components/elements/Button";
-import hiflix from "../assets/images/hiflix.png";
-import ebuId from "../assets/images/ebu-id.png";
+import Button from "../../components/elements/Button";
+import hiflix from "../../assets/images/hiflix.png";
+import ebuId from "../../assets/images/ebu-id.png";
 import { useDispatch, useSelector } from "react-redux";
-import Seat from "../components/fragments/Seat";
+import Seat from "../../components/fragments/Seat";
 import { useEffect, useState } from "react";
 import { FaExclamationCircle } from "react-icons/fa";
-import { orderAction } from "../redux/slices/orders";
+import { orderAction } from "../../redux/slices/orders";
 import { useNavigate } from "react-router";
-import useTitle from "../hooks/useTitle";
+import useTitle from "../../hooks/useTitle";
 const MovieOrder = () => {
   useTitle("Tickitz Orders");
   const orders = useSelector((state) => state.orders);

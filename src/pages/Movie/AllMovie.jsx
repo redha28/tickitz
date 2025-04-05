@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import bgAuth from "../assets/images/bg-auth.png";
-import MoreInfo from "../components/layouts/MoreInfo";
+import bgAuth from "../../assets/images/bg-auth.png";
+import MoreInfo from "../../components/layouts/MoreInfo";
 import { FaSearch } from "react-icons/fa";
-import { getPopularMovie } from "../api/movie";
-import Card from "../components/elements/Card";
-import Paginasion from "../components/elements/Paginasion";
-import Skeleton from "../components/elements/Skeleton";
-import useTitle from "../hooks/useTitle";
+import { getPopularMovie } from "../../api/movie";
+import Card from "../../components/elements/Card";
+import Paginasion from "../../components/elements/Paginasion";
+import Skeleton from "../../components/elements/Skeleton";
+import useTitle from "../../hooks/useTitle";
 
 const AllMovie = () => {
   useTitle("All Tickitz");

@@ -1,20 +1,20 @@
 import { MdDone } from "react-icons/md";
-import bcaLogo from "../assets/payment/Bank BCA Logo (SVG-240p) - FileVector69 1.png";
-import briLogo from "../assets/payment/Bank BRI (Bank Rakyat Indonesia) Logo (SVG-240p) - FileVector69 1.png";
-import danaLogo from "../assets/payment/Logo DANA (PNG-240p) - FileVector69 1.png";
-import gopayLogo from "../assets/payment/Logo GoPay (SVG-240p) - FileVector69 1.png";
-import googlePayLogo from "../assets/payment/logos_google-pay.png";
-import paypalLogo from "../assets/payment/logos_paypal.png";
-import visaLogo from "../assets/payment/logos_visa.png";
-import ovoLogo from "../assets/payment/Vector.png";
+import bcaLogo from "../../assets/payment/Bank BCA Logo (SVG-240p) - FileVector69 1.png";
+import briLogo from "../../assets/payment/Bank BRI (Bank Rakyat Indonesia) Logo (SVG-240p) - FileVector69 1.png";
+import danaLogo from "../../assets/payment/Logo DANA (PNG-240p) - FileVector69 1.png";
+import gopayLogo from "../../assets/payment/Logo GoPay (SVG-240p) - FileVector69 1.png";
+import googlePayLogo from "../../assets/payment/logos_google-pay.png";
+import paypalLogo from "../../assets/payment/logos_paypal.png";
+import visaLogo from "../../assets/payment/logos_visa.png";
+import ovoLogo from "../../assets/payment/Vector.png";
 import { useRef, useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import CardPayment from "../components/elements/CardPayment";
-import Loader from "../components/elements/Loader";
-import { historyAction } from "../redux/slices/history";
-import { orderAction } from "../redux/slices/orders";
-import useTitle from "../hooks/useTitle";
+import CardPayment from "../../components/elements/CardPayment";
+import Loader from "../../components/elements/Loader";
+import { historyAction } from "../../redux/slices/history";
+import { orderAction } from "../../redux/slices/orders";
+import useTitle from "../../hooks/useTitle";
 
 const Payment = () => {
   useTitle("Tickitz Payment");

@@ -1,9 +1,9 @@
-import Icon from "../components/elements/Icon";
-import FormAuth from "../components/fragments/FormAuth";
+import Icon from "../../components/elements/Icon";
+import FormAuth from "../../components/fragments/FormAuth";
 import { Link } from "react-router";
 import { FaFacebook } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
-import useTitle from "../hooks/useTitle";
+import useTitle from "../../hooks/useTitle";
 
 const SignUp = () => {
   useTitle("New User");

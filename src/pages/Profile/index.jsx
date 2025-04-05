@@ -1,15 +1,15 @@
 import { FaStar } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
-import AccountSetting from "../components/fragments/AccountSetting";
+import AccountSetting from "../../components/fragments/AccountSetting";
 import { Fragment, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import TiketResultPending from "../components/fragments/TiketResultPending";
-import TiketResultSuccess from "../components/fragments/TiketResultSuccess";
-import TiketResult from "../components/fragments/TiketResult";
-import { authAction } from "../redux/slices/auth";
+import TiketResultPending from "../../components/fragments/TiketResultPending";
+import TiketResultSuccess from "../../components/fragments/TiketResultSuccess";
+import TiketResult from "../../components/fragments/TiketResult";
+import { authAction } from "../../redux/slices/auth";
 import { useNavigate } from "react-router";
-import Loader from "../components/elements/Loader";
-import useTitle from "../hooks/useTitle";
+import Loader from "../../components/elements/Loader";
+import useTitle from "../../hooks/useTitle";
 
 const Profile = () => {
   useTitle("My Profile");

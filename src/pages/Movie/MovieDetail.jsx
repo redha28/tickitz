@@ -1,14 +1,14 @@
-import Button from "../components/elements/Button";
-import ebuId from "../assets/images/ebu-id.png";
-import hiflix from "../assets/images/hiflix.png";
+import Button from "../../components/elements/Button";
+import ebuId from "../../assets/images/ebu-id.png";
+import hiflix from "../../assets/images/hiflix.png";
 import { useState } from "react";
-import { getDetailsMovie } from "../api/movie";
+import { getDetailsMovie } from "../../api/movie";
 import { useNavigate, useParams } from "react-router";
 import { FaRegClock } from "react-icons/fa";
 import { FaMapLocationDot } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
-import { orderAction } from "../redux/slices/orders";
-import useTitle from "../hooks/useTitle";
+import { orderAction } from "../../redux/slices/orders";
+import useTitle from "../../hooks/useTitle";
 // import { orderContext } from "../context/orderContext";
 
 const MovieDetail = () => {

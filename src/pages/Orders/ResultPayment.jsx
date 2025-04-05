@@ -1,10 +1,10 @@
 import React, { Fragment } from "react";
-import Icon from "../components/elements/Icon";
+import Icon from "../../components/elements/Icon";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { MdFileDownload } from "react-icons/md";
 import { useSelector } from "react-redux";
 import { Link, Navigate } from "react-router";
-import useTitle from "../hooks/useTitle";
+import useTitle from "../../hooks/useTitle";
 
 const ResultPayment = () => {
   useTitle("Success Order");

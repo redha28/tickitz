@@ -5,7 +5,6 @@ import { Link, NavLink } from "react-router";
 import { useState } from "react";
 import { TbXboxX } from "react-icons/tb";
 import { useSelector } from "react-redux";
-// import MovieList from "../../components/fragments/MovieList";
 import MovieNew from "../../components/fragments/MovieNew";
 
 const AddMovie = () => {
