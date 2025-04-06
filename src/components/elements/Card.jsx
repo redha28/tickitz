@@ -16,9 +16,9 @@ const Card = ({ src, title, release, dataGenre = [], size, id, vote_average }) =
   };
 
   return (
-    <div className="flex flex-col gap-2 justify-between ">
+    <div className="flex flex-col w-full gap-2 place-self-center justify-between items-center ">
       <div
-        className={`${size} relative group w-56 h-72 rounded-md bg-cover hover:shadow-white bg-center hover:scale-105 transition-all`}
+        className={`${size} relative group w-52 min-h-72 rounded-md bg-cover hover:shadow-white bg-center hover:scale-105 transition-all`}
         style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w500${src})` }}>
         <div className="absolute hidden rounded-md group-hover:flex bg-black/60 backdrop-blur-xs w-full h-full flex-col items-center justify-center gap-4">
           <Button

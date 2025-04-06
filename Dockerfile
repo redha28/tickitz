@@ -1,13 +1,10 @@
-FROM node:23.6.1
+FROM nginx:latest
 
-WORKDIR /app
+COPY dist /usr/share/nginx/html
 
-COPY package*.json .
+COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
-RUN npm install
+EXPOSE 80
 
-COPY . .
 
-EXPOSE 5137
-
-CMD [ "npm", "run", "dev", "--", "--host" ]
+CMD ["nginx", "-g", "daemon off;"]

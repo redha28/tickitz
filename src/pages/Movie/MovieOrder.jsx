@@ -27,7 +27,7 @@ const MovieOrder = () => {
         navigate("/movie");
       }
     })();
-  }, []);
+  }, [orders.title, navigate]);
   return (
     <section className="min-h-screen bg-gray-300 px-4 py-8 lg:px-24">
       <div className="w-full flex justify-center">

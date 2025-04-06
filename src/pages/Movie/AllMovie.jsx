@@ -90,7 +90,7 @@ const AllMovie = () => {
             </div>
           </div>
         </div>
-        <div className="grid justify-center self-center lg:grid-cols-3 xl:grid-cols-4 lg:gap-6 gap-8 py-12">
+        <div className="grid justify-center self-center 2xl:grid-cols-5 md:grid-cols-2 sm:grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 lg:gap-6 gap-8 py-12">
           {isLoading ? (
             <>
               <Skeleton size={"w-80 h-96"} />
