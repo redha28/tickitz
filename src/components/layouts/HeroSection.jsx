@@ -6,7 +6,7 @@ import roblox from "../../assets/images/roblox.jpeg";
 
 const HeroSection = () => {
   return (
-    <section className="px-4 md:px-24 py-12 flex flex-col gap-12 lg:flex-row">
+    <section className="px-4 lg:px-8 md:px-12 xl:px-24 py-12 flex flex-col gap-12 lg:flex-row">
       <div className="flex-1 flex flex-col justify-center gap-6">
         <p className="text-2xl md:text-2xl text-blue-600 font-bold text-center md:text-start">
           MOVIE TICKET PURCHASES #1 IN INDONESIA

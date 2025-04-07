@@ -32,7 +32,7 @@ const Profile = () => {
   };
   console.log(history);
   return (
-    <div className="min-h-screen relative flex flex-col lg:flex-row gap-4  bg-gray-300 px-4 py-4 lg:px-24">
+    <div className="min-h-screen relative flex flex-col lg:flex-row gap-4  bg-gray-300 py-4 px-4 lg:px-8 md:px-12 xl:px-24">
       <div className="flex-1 bg-white px-4 min-h-screen lg:max-h-screen rounded-2xl  shadow-2xl py-12">
         <div className="flex flex-col gap-8 ">
           <div className="flex w-full font-bold text-2xl justify-between pr-4">

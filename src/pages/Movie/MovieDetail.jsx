@@ -64,10 +64,10 @@ const MovieDetail = () => {
                 }}>
                 <div className="absolute w-full h-full bg-black/70 "></div>
               </div>
-              <div className="min-h-72 w-full flex flex-col py-4 lg:flex-row px-4 lg:px-24">
+              <div className="min-h-72 w-full flex flex-col py-4 lg:flex-row px-4 lg:px-8 md:px-12 xl:px-24">
                 <div className="flex-1 h-full flex justify-center relative">
                   <div
-                    className="h-96 w-full lg:w-72 absolute -top-36 bg-white bg-cover bg-center rounded-xl lg:rounded-sm"
+                    className="h-96 w-60 sm:w-72 lg:w-72 absolute -top-36 bg-white bg-cover bg-center rounded-xl lg:rounded-sm"
                     style={{
                       backgroundImage: `url(https://image.tmdb.org/t/p/w500${data.poster_path})`,
                     }}></div>
@@ -109,11 +109,11 @@ const MovieDetail = () => {
                   </div>
                 </div>
               </div>
-              <div className="px-4 lg:px-24 ">
+              <div className="px-4 lg:px-8 md:px-12 xl:px-24 ">
                 <p className="font-bold text-2xl mb-4">Synopsis</p>
                 <p className="text-xl lg:w-[75%] text-gray-400 leading-8">{data.overview}</p>
               </div>
-              <div className="px-4 lg:px-24 mt-16">
+              <div className="px-4 lg:px-8 md:px-12 xl:px-24 mt-16">
                 <div>
                   <p className="font-bold text-4xl">Book Tickets</p>
                   <div className="mt-16 flex flex-col lg:flex-row justify-between gap-8">

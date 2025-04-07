@@ -29,7 +29,7 @@ const MovieOrder = () => {
     })();
   }, [orders.title, navigate]);
   return (
-    <section className="min-h-screen bg-gray-300 px-4 py-8 lg:px-24">
+    <section className="min-h-screen bg-gray-300 py-8 px-4 lg:px-8 md:px-12 xl:px-24">
       <div className="w-full flex justify-center">
         <div className=" py-4 justify-center gap-4 w-[70%] hidden lg:flex">
           <div className="flex flex-col justify-center items-center gap-2">
@@ -58,11 +58,11 @@ const MovieOrder = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row gap-4">
+      <div className="flex flex-col xl:flex-row gap-4">
         <div className="flex-[5] flex flex-col gap-4 bg-white rounded-md shadow-2xl px-4 py-8">
-          <div className="border-2 border-gray-300 flex flex-col lg:flex-row px-4 py-4 gap-4">
+          <div className="border-2 border-gray-300 flex flex-col md:flex-row px-4 py-4 gap-4">
             <div
-              className="w-full lg:w-60 min-h-36 lg:max-h-36 flex-1 rounded-xl  bg-cover"
+              className="w-full md:w-60 min-h-36 lg:max-h-36 flex-1 rounded-xl  bg-cover"
               style={{
                 backgroundImage: `url(${orders.image})`,
               }}></div>
@@ -88,7 +88,7 @@ const MovieOrder = () => {
           </div>
           <p className="font-bold text-2xl">Choose Your Seat</p>
           {/* seat */}
-          <div className="flex flex-col  gap-4">
+          <div className="flex flex-col gap-4">
             <p className="text-center block font-bold text-gray-400">Screen</p>
             <Seat seat={seat} setSeat={setSeat} setMessage={setMessage} />
           </div>

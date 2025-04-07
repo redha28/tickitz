@@ -28,7 +28,7 @@ const UpcomingMovie = ({ datas, isLoading }) => {
   // }, []);
 
   return (
-    <div className="px-4 lg:px-24 py-12">
+    <div className="px-4 lg:px-8 md:px-12 xl:px-24 py-12">
       <div className="flex justify-center lg:justify-between mb-8">
         <div>
           <h1 className="text-blue-600 font-bold text-2xl text-center lg:text-start">

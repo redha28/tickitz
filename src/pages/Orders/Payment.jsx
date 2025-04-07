@@ -149,7 +149,7 @@ const Payment = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-300 px-4 py-4 lg:px-24 relative">
+    <div className="min-h-screen bg-gray-300 py-4 px-4 lg:px-8 md:px-12 xl:px-24 relative">
       <div className="w-full flex justify-center">
         <div className="lg:flex py-4 justify-center gap-4 w-[70%] hidden">
           <div className="flex flex-col justify-center items-center gap-2">

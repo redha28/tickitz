@@ -26,7 +26,7 @@ const Seat = ({ seat, setSeat, setMessage }) => {
     });
   };
   return (
-    <div className="flex overflow-x-scroll lg:flex-row gap-8 items-center">
+    <div className="flex overflow-x-scroll lg:justify-center lg:flex-row gap-8 items-center">
       <div className="grid grid-cols-[40px_repeat(7,1fr)] gap-2">
         {rows.map((row, idx) => {
           return (

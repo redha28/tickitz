@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router";
 import LandingPage from "./pages/LandingPage";
 import Auth from "./components/layouts/Auth";
 import SignIn from "./pages/Auth/SignIn";
-import SignUp from "./pages/Auth/SignIn";
+import SignUp from "./pages/Auth/SignUp";
 import Movie from "./components/layouts/Movie";
 import AllMovie from "./pages/Movie/AllMovie";
 import MovieDetail from "./pages/Movie/MovieDetail";

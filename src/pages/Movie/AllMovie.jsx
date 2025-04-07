@@ -45,7 +45,7 @@ const AllMovie = () => {
         className="min-h-[500px] bg-cover bg-center bg-black/70 relative"
         style={{ backgroundImage: `url(${bgAuth})` }}>
         <div className="absolute w-full h-full bg-black/70 ">
-          <div className="text-white px-4 lg:px-24 w-full h-full relative">
+          <div className="text-white px-4 lg:px-8 md:px-12 xl:px-24 w-full h-full relative">
             <div className=" relative justify-center flex flex-col h-full">
               <p className="lg:font-bold text-2xl mb-2">LIST MOVIE OF THE WEEK</p>
               <p className="text-3xl lg:text-6xl lg:w-[60%]">
@@ -60,8 +60,8 @@ const AllMovie = () => {
           </div>
         </div>
       </div>
-      <div className="px-4 lg:px-24 min-h-[600px]" ref={movieRef}>
-        <div className="w-full flex flex-col lg:flex-row">
+      <div className="px-4 lg:px-8 md:px-12 xl:px-24 min-h-[600px]" ref={movieRef}>
+        <div className="w-full flex flex-col gap-3 lg:flex-row">
           <div className="flex-1 flex flex-col gap-4  justify-center items-center py-8">
             <p className="font-bold text-2xl">Cari Event</p>
             <div className="flex px-4 py-2 items-center gap-2 border-2 rounded-md">

@@ -49,11 +49,6 @@ const LandingPage = () => {
       <HeroSection />
       <FituresSection />
       <PopularMovie datas={dataPopularMovie} isLoading={isLoading} />
-      <div className="w-full flex justify-center">
-        <Link to={"/movie"} className="font-bold text-blue-600 items-center flex gap-4 text-2xl">
-          View All <FaArrowRightLong className="text-xl" />
-        </Link>
-      </div>
       <UpcomingMovie datas={dataUpComing} isLoading={isLoading} />
       <MoreInfo />
     </section>

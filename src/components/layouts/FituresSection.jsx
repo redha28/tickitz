@@ -2,7 +2,7 @@ import FituresContent from "../elements/FituresContent";
 
 const FituresSection = () => {
   return (
-    <section className="px-4 md:px-24 py-12">
+    <section className="px-4 lg:px-8 md:px-12 xl:px-24 py-12">
       <p className="text-blue-600 text-2xl font-bold mb-4 text-center lg:text-start">
         WHY CHOOSE US
       </p>
