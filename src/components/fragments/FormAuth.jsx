@@ -168,11 +168,11 @@ const FormAuth = ({ type }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4 mb-2">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-4 md:gap-4 mb-2">
       <div
         className={`${errorMessage ? "visible" : succesMessage ? "visible" : "invisible"}  ${
           errorMessage ? "bg-red-600" : "bg-green-600"
-        } px-4 font-bold flex items-center gap-4 text-white py-2 rounded-md`}>
+        } px-2 md:px-4 md:font-bold flex items-center gap-2 md:gap-4 text-white py-2 rounded-md`}>
         <FaExclamationCircle />
         <p className="">
           {errorMessage}
@@ -199,7 +199,7 @@ const FormAuth = ({ type }) => {
               : email
               ? "border-blue-600"
               : "border-gray-300"
-          } border-2 outline-none  rounded-md px-4 py-4 font-semibold`}
+          } border-2 outline-none  rounded-md px-2 py-2 md:px-4 md:py-4 font-semibold`}
         />
       </div>
       <div className="flex flex-col gap-2">
@@ -213,7 +213,7 @@ const FormAuth = ({ type }) => {
               : password
               ? "border-blue-600"
               : "border-gray-300"
-          } w-full border-2 rounded-md px-4 py-4 flex justify-between`}>
+          } w-full border-2 rounded-md px-2 py-2 md:px-4 md:py-4 flex justify-between`}>
           <input
             type={showPassword ? "password" : "text"}
             value={password}
@@ -230,9 +230,9 @@ const FormAuth = ({ type }) => {
             className="flex justify-center items-center w-max cursor-pointer"
             onClick={showPasswordHandler}>
             {!showPassword ? (
-              <FaRegEyeSlash className="text-2xl" />
-            ) : (
               <IoEyeOutline className="text-2xl" />
+            ) : (
+              <FaRegEyeSlash className="text-2xl" />
             )}
           </div>
         </div>
@@ -256,7 +256,7 @@ const FormAuth = ({ type }) => {
           type="submit"
           className={`${
             isLoading ? "bg-white" : "bg-blue-600"
-          } active:scale-95 transition-all w-full hover:cursor-pointer  flex justify-center items-center py-4 rounded-md  text-white font-bold`}
+          } active:scale-95 transition-all w-full hover:cursor-pointer  flex justify-center items-center py-3 md:py-4 rounded-md  text-white font-bold`}
           disabled={isLoading}>
           {isLoading ? <Loader /> : "Join For Free Now"}
         </button>
